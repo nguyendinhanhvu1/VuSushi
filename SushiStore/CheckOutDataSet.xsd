@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CheckOutDataSet" targetNamespace="http://tempuri.org/CheckOutDataSet.xsd" xmlns:mstns="http://tempuri.org/CheckOutDataSet.xsd" xmlns="http://tempuri.org/CheckOutDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=DESKTOP-R8IHFIS;Initial Catalog=VuSushi;Persist Security Info=True;User ID=sa;Password=0913522819" IsAppSettingsProperty="false" Modifier="Assembly" Name="desktop-r8ihfis.VuSushi.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="desktop-r8ihfis.VuSushi.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.OrderDetail.DetailID, dbo.[Table].TableNumber, dbo.Staff.StaffName, dbo.Product.ProdName, dbo.[Order].OrdDate, dbo.[Order].ServedDate, dbo.[Order].Paid
+FROM            dbo.[Order] INNER JOIN
+                         dbo.OrderDetail ON dbo.[Order].OrderID = dbo.OrderDetail.OrderID INNER JOIN
+                         dbo.Product ON dbo.[Order].ProdID = dbo.Product.ProdID INNER JOIN
+                         dbo.Staff ON dbo.[Order].StaffID = dbo.Staff.StaffID INNER JOIN
+                         dbo.[Table] ON dbo.OrderDetail.TableID = dbo.[Table].TableID
+GROUP BY dbo.OrderDetail.DetailID, dbo.[Table].TableNumber, dbo.Staff.StaffName, dbo.Product.ProdName, dbo.[Order].OrdDate, dbo.[Order].ServedDate, dbo.[Order].Paid</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DetailID" DataSetColumn="DetailID" />
+              <Mapping SourceColumn="OrdDate" DataSetColumn="OrdDate" />
+              <Mapping SourceColumn="ServedDate" DataSetColumn="ServedDate" />
+              <Mapping SourceColumn="Paid" DataSetColumn="Paid" />
+              <Mapping SourceColumn="TableNumber" DataSetColumn="TableNumber" />
+              <Mapping SourceColumn="StaffName" DataSetColumn="StaffName" />
+              <Mapping SourceColumn="ProdName" DataSetColumn="ProdName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CheckOutDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CheckOutDataSet" msprop:Generator_UserDSName="CheckOutDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DetailID" msprop:Generator_ColumnVarNameInTable="columnDetailID" msprop:Generator_ColumnPropNameInRow="DetailID" msprop:Generator_ColumnPropNameInTable="DetailIDColumn" msprop:Generator_UserColumnName="DetailID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrdDate" msprop:Generator_ColumnVarNameInTable="columnOrdDate" msprop:Generator_ColumnPropNameInRow="OrdDate" msprop:Generator_ColumnPropNameInTable="OrdDateColumn" msprop:Generator_UserColumnName="OrdDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ServedDate" msprop:Generator_ColumnVarNameInTable="columnServedDate" msprop:Generator_ColumnPropNameInRow="ServedDate" msprop:Generator_ColumnPropNameInTable="ServedDateColumn" msprop:Generator_UserColumnName="ServedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Paid" msprop:Generator_ColumnVarNameInTable="columnPaid" msprop:Generator_ColumnPropNameInRow="Paid" msprop:Generator_ColumnPropNameInTable="PaidColumn" msprop:Generator_UserColumnName="Paid" type="xs:int" minOccurs="0" />
+              <xs:element name="TableNumber" msprop:Generator_ColumnVarNameInTable="columnTableNumber" msprop:Generator_ColumnPropNameInRow="TableNumber" msprop:Generator_ColumnPropNameInTable="TableNumberColumn" msprop:Generator_UserColumnName="TableNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StaffName" msprop:Generator_ColumnVarNameInTable="columnStaffName" msprop:Generator_ColumnPropNameInRow="StaffName" msprop:Generator_ColumnPropNameInTable="StaffNameColumn" msprop:Generator_UserColumnName="StaffName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProdName" msprop:Generator_ColumnVarNameInTable="columnProdName" msprop:Generator_ColumnPropNameInRow="ProdName" msprop:Generator_ColumnPropNameInTable="ProdNameColumn" msprop:Generator_UserColumnName="ProdName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
