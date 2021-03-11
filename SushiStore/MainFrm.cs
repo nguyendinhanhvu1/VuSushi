@@ -65,5 +65,11 @@ namespace SushiStore
             TableFrm form = new TableFrm();
             form.ShowDialog();
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            ReportFrm form = new ReportFrm();
+            form.ShowDialog();
+        }
     }
 }

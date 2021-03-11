@@ -171,7 +171,7 @@
             this.btnServed.Name = "btnServed";
             this.btnServed.Size = new System.Drawing.Size(75, 23);
             this.btnServed.TabIndex = 5;
-            this.btnServed.Text = "Order";
+            this.btnServed.Text = "Serving";
             this.btnServed.UseVisualStyleBackColor = true;
             this.btnServed.Click += new System.EventHandler(this.btnServed_Click);
             // 
